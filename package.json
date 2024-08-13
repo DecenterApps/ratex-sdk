@@ -6,11 +6,12 @@
   "dependencies": {
     "@graphql-typed-document-node/core": "^3.2.0",
     "@uniswap/sdk-core": "^4.0.6",
-    "@uniswap/v3-sdk": "^3.10.0",
+    "@uniswap/v3-sdk": "^3.13.1",
     "bignumber.js": "^9.1.2",
     "ethers": "^6.7.0",
     "graphql": "^16.7.1",
     "graphql-request": "^6.1.0",
+    "hardhat": "^2.22.8",
     "js-sha256": "^0.10.1",
     "mnemonist": "^0.39.5",
     "object-hash": "^3.0.0",
@@ -26,11 +27,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "preinstall": "npx npm-force-resolutions"
   },
   "devDependencies": {
     "@types/object-hash": "^3.0.6",
     "@types/web3": "^1.2.2",
     "typescript": "^5.5.4"
+  },
+  "resolutions": {
+    "elliptic": "^6.5.4"
   }
 }
