@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "ES2019",
     "module": "CommonJS",
+    "declaration": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -9,15 +10,17 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
-    "rootDir": "./sdk",
+    "rootDir": ".",
     "resolveJsonModule": true,
     "isolatedModules": false,
     "noEmitOnError": true
   },
   "include": [
-    "sdk/**/*.ts"
+    "."
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist",
+    "./dexes/pools/uniswap/testUniswapOffchainQuoter.ts"
   ]
 }

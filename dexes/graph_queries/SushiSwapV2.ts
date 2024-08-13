@@ -6,7 +6,7 @@ import { dexIds } from '../dexIdsList'
 import { Pool, PoolInfo, Token } from '../../types'
 import { SushiSwapV2Pool } from '../pools/SushiSwapV2'
 import Web3 from 'web3'
-import { CreateSushiSwapHelperContract } from '../../../sdk/contracts/rateX/SushiSwapHelper'
+import { CreateSushiSwapHelperContract } from '../../contracts/rateX/SushiSwapHelper'
 
 
 export default class SushiSwapV2 implements DEXGraphFunctionality {

@@ -7,6 +7,7 @@
     "@graphql-typed-document-node/core": "^3.2.0",
     "@uniswap/sdk-core": "^4.0.6",
     "@uniswap/v3-sdk": "^3.10.0",
+    "bignumber.js": "^9.1.2",
     "crypto": "^1.0.1",
     "ethers": "^6.7.0",
     "fs": "^0.0.1-security",
@@ -19,12 +20,19 @@
     "sha.js": "^2.4.11",
     "sha256": "^0.2.0",
     "ts-node": "^10.9.1",
-    "tstl": "^2.5.13"
+    "tstl": "^2.5.13",
+    "web3": "^4.11.1"
   },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@types/object-hash": "^3.0.3"
+    "@types/object-hash": "^3.0.3",
+    "@types/web3": "^1.2.2",
+    "typescript": "^5.5.4"
   }
 }
