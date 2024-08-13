@@ -1,17 +1,24 @@
 import Web3 from "web3";
 import { Quote } from "./types";
-import { RegisteredSubscription } from "web3/lib/commonjs/eth.exports";
+export declare enum Dexes {
+    UNISWAP_V2 = "UniswapV2",
+    UNISWAP_V3 = "UniswapV3",
+    SUSHISWAP_V2 = "Sushiswap",
+    BALANCER = "Balancer",
+    CAMELOT = "Camelot"
+}
 interface RateXConfig {
     rpcUrl: string;
     chainId: number;
-    dexes: Array<string>;
+    dexes?: Array<Dexes>;
     graphApiKey: string;
 }
-declare class RateX {
-    rpcProvider: Web3<RegisteredSubscription>;
+export declare class RateX {
+    rpcProvider: Web3;
     chainId: number;
     graphApiKey: string;
+    dexes: Array<Dexes>;
     constructor(config: RateXConfig);
     getQuote(tokenIn: string, tokenOut: string, amountIn: bigint): Promise<Quote>;
 }
-export default RateX;
+export {};
