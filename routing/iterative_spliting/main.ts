@@ -46,6 +46,8 @@ async function findRouteWithIterativeSplitting(tokenA: string, tokenB: string, a
 
     const quote: Quote = { routes: foundRoutes, quote: amountOut };
 
+
+
     let total = BigInt(0);
     const resetPools = new Set<string>()
     for (const route of quote.routes) {
@@ -66,6 +68,8 @@ async function findRouteWithIterativeSplitting(tokenA: string, tokenB: string, a
         total += progress;
     }
     quote.quote = total;
+    if (quote.routes[0].swaps.length == 0)
+        quote.quote = BigInt(0)
     return quote;
 }
 

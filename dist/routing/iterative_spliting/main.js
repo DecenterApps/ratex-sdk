@@ -62,6 +62,8 @@ async function findRouteWithIterativeSplitting(tokenA, tokenB, amountIn, pools, 
         total += progress;
     }
     quote.quote = total;
+    if (quote.routes[0].swaps.length == 0)
+        quote.quote = BigInt(0);
     return quote;
 }
 // Function to update all the pools in a route with the amounts that passed through them
