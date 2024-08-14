@@ -2,7 +2,11 @@ import Web3 from "web3"
 import { findRoute } from "./routing/main"
 import { fetchPoolsData } from "./swap/graph_communication"
 import { Pool, Quote } from "./types"
+<<<<<<< Updated upstream
 import { generateCalldata, prepareSwapParams } from "./utils/utils";
+=======
+import {processQuote} from "./utils/utils";
+>>>>>>> Stashed changes
 
 export enum Dexes {
     UNISWAP_V2 = "UniswapV2",
@@ -41,6 +45,7 @@ export class RateX {
         return route
     }
 
+<<<<<<< Updated upstream
     async getSwapCalldata(tokenIn: string, tokenOut: string, amountIn: bigint, slippagePercentage: number, recipient: string, deadlineInMinutes: number): Promise<string> {
         let quote = await this.getQuote(tokenIn, tokenOut, amountIn);
         return generateCalldata(quote, slippagePercentage, deadlineInMinutes, tokenIn, tokenOut, amountIn, recipient);
@@ -50,4 +55,12 @@ export class RateX {
         let quote = await this.getQuote(tokenIn, tokenOut, amountIn);
         return prepareSwapParams(quote, slippagePercentage, deadlineInMinutes, tokenIn, tokenOut, amountIn, recipient);
     }    
+=======
+    async getSolidityCalldata(tokenIn: string, tokenOut: string, amountIn: bigint, slippagePercentage: number,recipient: string, deadlineInMinutes: number): Promise<number> {
+        let quote = await this.getQuote(tokenIn, tokenOut, amountIn);
+        const { adjustedQuote, minAmountOut, deadline } = processQuote(quote, slippagePercentage, deadlineInMinutes);
+        console.log(adjustedQuote)
+        return 5;
+    }
+>>>>>>> Stashed changes
 }
