@@ -1,5 +1,6 @@
 import Web3 from 'web3';
-import { Pool, PoolInfo, Dexes, DEXGraphFunctionality } from '../utils/types/types'
+import { Pool, PoolInfo, DEXGraphFunctionality } from '../utils/types/types'
+import { Dexes } from '../index';
 import { myLocalStorage } from './my_local_storage';
 import UniswapV2 from '../dexes/graph_queries/UniswapV2';
 import SushiSwapV2 from '../dexes/graph_queries/SushiSwapV2';

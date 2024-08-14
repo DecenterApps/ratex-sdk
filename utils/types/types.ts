@@ -6,13 +6,6 @@ export interface ResponseType {
   errorMessage: string;
 }
 
-export interface RateXConfig {
-  rpcUrl: string;
-  chainId: number;
-  dexes?: Array<Dexes>;
-  graphApiKey: string;
-}
-
 export interface DEXGraphFunctionality {
   setEndpoint: (chainId: number, graphApiKey: string) => void;
   getTopPools: (numPools: number) => Promise<PoolInfo[]>;
@@ -28,14 +21,6 @@ export interface DEXGraphFunctionality {
     poolInfos: PoolInfo[],
     rpcProvider: Web3
   ) => Promise<Pool[]>;
-}
-
-export enum Dexes {
-  UNISWAP_V2 = "UniswapV2",
-  UNISWAP_V3 = "UniswapV3",
-  SUSHISWAP_V2 = "Sushiswap",
-  BALANCER = "Balancer",
-  CAMELOT = "Camelot",
 }
 
 export type Token = {

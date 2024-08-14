@@ -28,7 +28,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BalancerWeightedPool = void 0;
-const types_1 = require("../../../types");
+const types_1 = require("../../../utils/types/types");
 const bignumber_js_1 = __importDefault(require("bignumber.js"));
 const fp = __importStar(require("../../../utils/math/fixed-points"));
 const math = __importStar(require("../../../utils/math/math"));

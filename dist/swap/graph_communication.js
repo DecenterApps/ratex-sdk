@@ -4,13 +4,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.fetchPoolsData = fetchPoolsData;
+const index_1 = require("../index");
 const my_local_storage_1 = require("./my_local_storage");
 const UniswapV2_1 = __importDefault(require("../dexes/graph_queries/UniswapV2"));
 const SushiSwapV2_1 = __importDefault(require("../dexes/graph_queries/SushiSwapV2"));
 const UniswapV3_1 = __importDefault(require("../dexes/graph_queries/UniswapV3"));
 const BalancerV2_1 = __importDefault(require("../dexes/graph_queries/BalancerV2"));
 const CamelotV2_1 = __importDefault(require("../dexes/graph_queries/CamelotV2"));
-const index_1 = require("../index");
 let initializedMainnet = false;
 let initializedArbitrum = false;
 let initializedDexes = [];

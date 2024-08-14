@@ -1,4 +1,4 @@
-import { Pool, Token } from '../../types';
+import { Pool, Token } from '../../utils/types/types';
 export declare class UniswapV2Pool extends Pool {
     reserves: bigint[];
     startingReserves: bigint[];

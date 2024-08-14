@@ -1,4 +1,4 @@
-import { Quote, SwapStep } from "../types";
+import { Quote, SwapStep } from "./types/types";
 export declare function prepareSwapParams(quote: Quote, slippagePercentage: number, deadlineInMinutes: number, tokenIn: string, tokenOut: string, amountIn: bigint, recipient: string): {
     adjustedQuote: {
         swaps: {

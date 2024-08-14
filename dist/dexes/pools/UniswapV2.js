@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UniswapV2Pool = void 0;
-const types_1 = require("../../types");
+const types_1 = require("../../utils/types/types");
 class UniswapV2Pool extends types_1.Pool {
     constructor(poolId, dexId, tokens, reserves) {
         super(poolId, dexId, tokens);

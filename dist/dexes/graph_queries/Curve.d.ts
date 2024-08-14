@@ -1,5 +1,4 @@
-import { DEXGraphFunctionality } from '../../DEXGraphFunctionality';
-import { Pool, PoolInfo } from '../../types';
+import { Pool, PoolInfo, DEXGraphFunctionality } from '../../utils/types/types';
 import Web3 from 'web3';
 export default class Curve implements DEXGraphFunctionality {
     dexId: string;

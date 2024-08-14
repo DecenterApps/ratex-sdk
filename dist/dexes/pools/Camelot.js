@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CamelotPool = void 0;
-const types_1 = require("../../types");
+const types_1 = require("../../utils/types/types");
 const bignumber_js_1 = __importDefault(require("bignumber.js"));
 // Camelot V2 pools have 2 tokens in the pool, and a fee
 // Example contracts of one Camelot V2 pool: https://arbiscan.io/address/0xa6c5c7d189fa4eb5af8ba34e63dcdd3a635d433f#readContract

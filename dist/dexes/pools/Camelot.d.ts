@@ -1,4 +1,4 @@
-import { Pool, Token } from '../../types';
+import { Pool, Token } from '../../utils/types/types';
 import BigNumber from "bignumber.js";
 export declare class CamelotPool extends Pool {
     fees: BigNumber[];

@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CurvePool = void 0;
-const types_1 = require("../../types");
+const types_1 = require("../../utils/types/types");
 const bignumber_js_1 = __importDefault(require("bignumber.js"));
 const js_sha256_1 = require("js-sha256");
 // Output amount calculations resource: https://atulagarwal.dev/posts/curveamm/stableswap/

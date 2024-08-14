@@ -1,5 +1,4 @@
-import { DEXGraphFunctionality } from '../../DEXGraphFunctionality';
-import { Pool, PoolInfo } from '../../types';
+import { Pool, PoolInfo, DEXGraphFunctionality } from '../../utils/types/types';
 export default class NewDex implements DEXGraphFunctionality {
     endpoint: string;
     dexId: string;
