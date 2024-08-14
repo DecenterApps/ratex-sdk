@@ -1,19 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.prepareSwapParams = prepareSwapParams;
 exports.generateCalldata = generateCalldata;
 exports.transferQuoteWithBalancerPoolIdToAddress = transferQuoteWithBalancerPoolIdToAddress;
 exports.hashStringToInt = hashStringToInt;
 exports.encodeSwapData = encodeSwapData;
 const RateXAbi_1 = require("../contracts/abi/RateXAbi");
 const ethers_1 = require("ethers");
-function generateCalldata(quote, slippagePercentage, deadlineInMinutes, tokenIn, tokenOut, amountIn, recipient) {
-    // Transform poolId from bytes32 to address format
+function prepareSwapParams(quote, slippagePercentage, deadlineInMinutes, tokenIn, tokenOut, amountIn, recipient) {
     const quoteWithAddressPoolId = transferQuoteWithBalancerPoolIdToAddress(quote);
-    // Calculate minAmountOut considering slippage
     const HUNDRED = BigInt(100);
     const slippageBigInt = BigInt(slippagePercentage) * HUNDRED;
     const minAmountOut = (quoteWithAddressPoolId.quote * (HUNDRED - slippageBigInt)) / HUNDRED;
-    // Adjust routes with encoded swap data and dexId
     const adjustedQuote = quoteWithAddressPoolId.routes.map((route) => ({
         swaps: route.swaps.map((swap) => ({
             data: encodeSwapData(swap), // Encode swap data
@@ -21,11 +19,9 @@ function generateCalldata(quote, slippagePercentage, deadlineInMinutes, tokenIn,
         })),
         amountIn: route.amountIn,
     }));
-    // Calculate deadline timestamp
     const deadline = Math.floor(Date.now() / 1000) + 60 * deadlineInMinutes;
-    // Initialize ABI coder and encode function parameters
-    const abiCoder = new ethers_1.ethers.AbiCoder();
-    const calldata = new ethers_1.ethers.Interface(RateXAbi_1.RateXAbi).encodeFunctionData("swap", [
+    // Return the parameters as a plain object
+    return {
         adjustedQuote,
         tokenIn,
         tokenOut,
@@ -33,7 +29,21 @@ function generateCalldata(quote, slippagePercentage, deadlineInMinutes, tokenIn,
         minAmountOut,
         recipient,
         deadline,
+    };
+}
+function generateCalldata(quote, slippagePercentage, deadlineInMinutes, tokenIn, tokenOut, amountIn, recipient) {
+    const params = prepareSwapParams(quote, slippagePercentage, deadlineInMinutes, tokenIn, tokenOut, amountIn, recipient);
+    const abiCoder = new ethers_1.ethers.AbiCoder();
+    const calldata = new ethers_1.ethers.Interface(RateXAbi_1.RateXAbi).encodeFunctionData("swap", [
+        params.adjustedQuote,
+        params.tokenIn,
+        params.tokenOut,
+        params.amountIn,
+        params.minAmountOut,
+        params.recipient,
+        params.deadline,
     ]);
+    // Return swap calldata
     return calldata;
 }
 function transferQuoteWithBalancerPoolIdToAddress(quote) {

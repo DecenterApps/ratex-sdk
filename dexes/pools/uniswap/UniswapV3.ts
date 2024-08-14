@@ -1,4 +1,4 @@
-import { Pool, Token } from '../../../types'
+import { Pool, Token } from '../../../utils/types/types'
 import { UniswapState } from './uniswapState'
 import { PoolState } from './types'
 

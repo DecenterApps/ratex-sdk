@@ -1,4 +1,4 @@
-import {Route, SwapStep, Pool, Token} from '../../types'
+import {Route, SwapStep, Pool, Token} from '../../utils/types/types'
 
 type DpInfo = {
   amountOut: bigint

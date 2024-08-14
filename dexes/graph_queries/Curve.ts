@@ -1,5 +1,5 @@
-import { DEXGraphFunctionality } from '../../DEXGraphFunctionality'
-import { Pool, PoolInfo, Token } from '../../types'
+import { DEXGraphFunctionality } from '../../interfaces/DEXGraphFunctionality'
+import { Pool, PoolInfo, Token } from '../../utils/types/types'
 import { CurvePool } from '../pools/Curve'
 import BigNumber from 'bignumber.js'
 import { dexIds } from '../dexIdsList'

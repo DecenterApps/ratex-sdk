@@ -1,4 +1,4 @@
-import { Quote, SwapStep } from "../types";
+import { Quote, SwapStep } from "./types/types";
 import { RateXAbi } from "../contracts/abi/RateXAbi";
 import { keccak256, toUtf8Bytes, ethers } from "ethers";
 

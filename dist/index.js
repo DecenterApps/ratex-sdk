@@ -33,9 +33,13 @@ class RateX {
         console.log(middle - preFetchPools);
         return route;
     }
-    async getSolidityCalldata(tokenIn, tokenOut, amountIn, slippagePercentage, recipient, deadlineInMinutes) {
+    async getSwapCalldata(tokenIn, tokenOut, amountIn, slippagePercentage, recipient, deadlineInMinutes) {
         let quote = await this.getQuote(tokenIn, tokenOut, amountIn);
         return (0, utils_1.generateCalldata)(quote, slippagePercentage, deadlineInMinutes, tokenIn, tokenOut, amountIn, recipient);
+    }
+    async getSwapParameters(tokenIn, tokenOut, amountIn, slippagePercentage, recipient, deadlineInMinutes) {
+        let quote = await this.getQuote(tokenIn, tokenOut, amountIn);
+        return (0, utils_1.prepareSwapParams)(quote, slippagePercentage, deadlineInMinutes, tokenIn, tokenOut, amountIn, recipient);
     }
 }
 exports.RateX = RateX;

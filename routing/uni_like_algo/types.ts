@@ -1,4 +1,4 @@
-import {Pool} from "../../types";
+import {Pool} from "../../utils/types/types";
 
 export interface TRouteStep {
     pool: Pool,

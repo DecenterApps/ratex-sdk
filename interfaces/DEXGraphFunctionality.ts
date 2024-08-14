@@ -1,5 +1,5 @@
 import Web3 from 'web3'
-import { Pool, PoolInfo } from './types'
+import { Pool, PoolInfo } from '../utils/types/types'
 
 export interface DEXGraphFunctionality {
   setEndpoint: (chainId: number, graphApiKey: string) => void

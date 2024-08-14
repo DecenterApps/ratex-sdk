@@ -1,4 +1,4 @@
-import {Pool} from "../../types";
+import {Pool} from "../../utils/types/types";
 import {ComputeRoutesParams, TRoute, TRouteStep} from "./types";
 
 export default function computeRoutes(

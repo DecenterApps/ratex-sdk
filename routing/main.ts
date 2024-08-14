@@ -1,4 +1,4 @@
-import {Quote, Pool} from "../types";
+import {Quote, Pool} from "../utils/types/types";
 import {findRouteUniLikeAlgo} from "./uni_like_algo/main";
 import {findRouteWithIterativeSplitting} from "./iterative_spliting/main";
 

@@ -1,4 +1,4 @@
-import { Pool, PoolInfo } from '../../../types';
+import { Pool, PoolInfo } from '../../../utils/types/types';
 import { BalancerWeightedPool } from './BalancerWeightedPool';
 import { CreateBalancerHelperContract } from '../../../contracts/rateX/BalancerHelper';
 import Web3 from 'web3';

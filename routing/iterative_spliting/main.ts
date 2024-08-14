@@ -1,5 +1,5 @@
 import { myLocalStorage } from "../../swap/my_local_storage";
-import { Quote, Route, Pool, PoolInfo } from "../../types";
+import { Quote, Route, Pool, PoolInfo } from "../../utils/types/types";
 import { createGraph, multiHopSwap } from "./multiHopSwap";
 import objectHash from "object-hash";
 

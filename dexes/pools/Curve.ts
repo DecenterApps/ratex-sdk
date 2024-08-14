@@ -1,4 +1,4 @@
-import { Token, Pool } from '../../types'
+import { Token, Pool } from '../../utils/types/types'
 import BigNumber from 'bignumber.js'
 import { sha256 } from 'js-sha256';
 

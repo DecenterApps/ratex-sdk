@@ -1,6 +1,6 @@
 // Ported from Solidity: https://github.com/balancer/balancer-v2-monorepo/blob/master/pkg/pool-weighted/contracts/WeightedMath.sol
 
-import { Token, Pool } from '../../../types'
+import { Token, Pool } from '../../../utils/types/types'
 import BigNumber from 'bignumber.js'
 import * as fp from '../../../utils/math/fixed-points'
 import * as math from '../../../utils/math/math'

@@ -1,5 +1,6 @@
 import Web3 from "web3";
 import { Quote } from "./types";
+import { prepareSwapParams } from "./utils/utils";
 export declare enum Dexes {
     UNISWAP_V2 = "UniswapV2",
     UNISWAP_V3 = "UniswapV3",
@@ -20,6 +21,7 @@ export declare class RateX {
     dexes: Array<Dexes>;
     constructor(config: RateXConfig);
     getQuote(tokenIn: string, tokenOut: string, amountIn: bigint): Promise<Quote>;
-    getSolidityCalldata(tokenIn: string, tokenOut: string, amountIn: bigint, slippagePercentage: number, recipient: string, deadlineInMinutes: number): Promise<string>;
+    getSwapCalldata(tokenIn: string, tokenOut: string, amountIn: bigint, slippagePercentage: number, recipient: string, deadlineInMinutes: number): Promise<string>;
+    getSwapParameters(tokenIn: string, tokenOut: string, amountIn: bigint, slippagePercentage: number, recipient: string, deadlineInMinutes: number): Promise<ReturnType<typeof prepareSwapParams>>;
 }
 export {};

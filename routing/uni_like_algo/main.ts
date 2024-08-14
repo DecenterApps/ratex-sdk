@@ -1,4 +1,4 @@
-import {Pool, Quote, Route, SwapStep} from "../../types";
+import {Pool, Quote, Route, SwapStep} from "../../utils/types/types";
 import {TQuoteUniLike, TRoute,} from "./types";
 import computeRoutes from "./compute_routes_backtrack";
 import calculateAmountDistribution from "./amount_distribution";

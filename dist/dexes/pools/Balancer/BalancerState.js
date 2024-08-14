@@ -15,7 +15,7 @@ class BalancerState {
                 const res = await BalancerHelperContract.methods
                     .getWeightedPoolInfo(pool.poolId)
                     .call();
-                const [decimals, invariant, tokens, balances, weights, swapFeePercentage] = [res[0], res[1], res[2], res[3], res[4], res[5]];
+                const [decimals, tokens, balances, weights, swapFeePercentage] = [res[0], res[1], res[2], res[3], res[4]];
                 const weightedPool = new BalancerWeightedPool_1.BalancerWeightedPool(pool.poolId, pool.dexId, pool.tokens, balances, weights, swapFeePercentage);
                 return weightedPool;
             }

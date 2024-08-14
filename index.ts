@@ -1,22 +1,8 @@
 import Web3 from "web3"
 import { findRoute } from "./routing/main"
 import { fetchPoolsData } from "./swap/graph_communication"
-import { Pool, Quote } from "./types"
+import { Pool, Quote, Dexes, RateXConfig } from "./utils/types/types";
 import { generateCalldata, prepareSwapParams } from "./utils/utils";
-
-export enum Dexes {
-    UNISWAP_V2 = "UniswapV2",
-    UNISWAP_V3 = "UniswapV3",
-    SUSHISWAP_V2 = "Sushiswap",
-    BALANCER = "Balancer",
-    CAMELOT = "Camelot"
-}
-interface RateXConfig {
-    rpcUrl: string,
-    chainId: number,
-    dexes?: Array<Dexes>,
-    graphApiKey: string
-}
 
 export class RateX {
     rpcProvider: Web3

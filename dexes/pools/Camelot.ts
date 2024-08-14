@@ -1,4 +1,4 @@
-import { Pool, Token } from '../../types'
+import { Pool, Token } from '../../utils/types/types'
 import BigNumber from "bignumber.js"
 
 // Camelot V2 pools have 2 tokens in the pool, and a fee
