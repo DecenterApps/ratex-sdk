@@ -1,13 +1,11 @@
 import Web3 from 'web3';
-import { DEXGraphFunctionality } from '../interfaces/DEXGraphFunctionality'
-import { Pool, PoolInfo } from '../utils/types/types'
+import { Pool, PoolInfo, Dexes, DEXGraphFunctionality } from '../utils/types/types'
 import { myLocalStorage } from './my_local_storage';
 import UniswapV2 from '../dexes/graph_queries/UniswapV2';
 import SushiSwapV2 from '../dexes/graph_queries/SushiSwapV2';
 import UniswapV3 from '../dexes/graph_queries/UniswapV3';
 import BalancerV2 from '../dexes/graph_queries/BalancerV2';
 import CamelotV2 from '../dexes/graph_queries/CamelotV2';
-import { Dexes } from '../index';
 
 let initializedMainnet = false
 let initializedArbitrum = false

@@ -1,8 +1,7 @@
 import { parse } from 'graphql'
 import { gql, request } from 'graphql-request'
-import { DEXGraphFunctionality } from '../../interfaces/DEXGraphFunctionality'
 import { TypedDocumentNode } from '@graphql-typed-document-node/core'
-import { Pool, PoolInfo } from '../../utils/types/types'
+import { Pool, PoolInfo, DEXGraphFunctionality } from '../../utils/types/types'
 
 export default class NewDex implements DEXGraphFunctionality {
   endpoint = ''
