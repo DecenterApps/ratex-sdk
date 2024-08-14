@@ -38,6 +38,12 @@ Our goal is to create a competitive alternative by:
 | Balancer (weighted pools) |    ✅     |
 | Camelot                   |    ✅     |
 
+## Requirements
+
+Before you begin, ensure you have the following tools installed:
+
+- [Node.js (>= v18)](https://nodejs.org/en/download/)
+
 ## 📦 Installation
 
 ```bash
