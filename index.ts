@@ -2,6 +2,7 @@ import Web3 from "web3"
 import { findRoute } from "./routing/main"
 import { fetchPoolsData } from "./swap/graph_communication"
 import { Pool, Quote } from "./types"
+import { generateCalldata, prepareSwapParams } from "./utils/utils";
 
 export enum Dexes {
     UNISWAP_V2 = "UniswapV2",
@@ -39,4 +40,14 @@ export class RateX {
         console.log(middle - preFetchPools)
         return route
     }
+
+    async getSwapCalldata(tokenIn: string, tokenOut: string, amountIn: bigint, slippagePercentage: number, recipient: string, deadlineInMinutes: number): Promise<string> {
+        let quote = await this.getQuote(tokenIn, tokenOut, amountIn);
+        return generateCalldata(quote, slippagePercentage, deadlineInMinutes, tokenIn, tokenOut, amountIn, recipient);
+    }
+    
+    async getSwapParameters(tokenIn: string, tokenOut: string, amountIn: bigint, slippagePercentage: number, recipient: string, deadlineInMinutes: number): Promise<ReturnType<typeof prepareSwapParams>> {
+        let quote = await this.getQuote(tokenIn, tokenOut, amountIn);
+        return prepareSwapParams(quote, slippagePercentage, deadlineInMinutes, tokenIn, tokenOut, amountIn, recipient);
+    }    
 }

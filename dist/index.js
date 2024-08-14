@@ -7,6 +7,7 @@ exports.RateX = exports.Dexes = void 0;
 const web3_1 = __importDefault(require("web3"));
 const main_1 = require("./routing/main");
 const graph_communication_1 = require("./swap/graph_communication");
+const utils_1 = require("./utils/utils");
 var Dexes;
 (function (Dexes) {
     Dexes["UNISWAP_V2"] = "UniswapV2";
@@ -31,6 +32,10 @@ class RateX {
         const finished = Date.now();
         console.log(middle - preFetchPools);
         return route;
+    }
+    async getSolidityCalldata(tokenIn, tokenOut, amountIn, slippagePercentage, recipient, deadlineInMinutes) {
+        let quote = await this.getQuote(tokenIn, tokenOut, amountIn);
+        return (0, utils_1.generateCalldata)(quote, slippagePercentage, deadlineInMinutes, tokenIn, tokenOut, amountIn, recipient);
     }
 }
 exports.RateX = RateX;

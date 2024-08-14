@@ -20,5 +20,6 @@ export declare class RateX {
     dexes: Array<Dexes>;
     constructor(config: RateXConfig);
     getQuote(tokenIn: string, tokenOut: string, amountIn: bigint): Promise<Quote>;
+    getSolidityCalldata(tokenIn: string, tokenOut: string, amountIn: bigint, slippagePercentage: number, recipient: string, deadlineInMinutes: number): Promise<string>;
 }
 export {};
