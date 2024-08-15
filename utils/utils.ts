@@ -107,7 +107,7 @@ export function hashStringToInt(dexName: string): number {
 export function encodeSwapData(swap: SwapStep): string {
   const abiCoder = new ethers.AbiCoder();
   if (
-    swap.dexId === "BALANCER" ||
+    swap.dexId === "BALANCER_V2" ||
     swap.dexId === "CURVE" ||
     swap.dexId === "UNI_V3"
   ) {
