@@ -60,7 +60,7 @@ function hashStringToInt(dexName) {
 }
 function encodeSwapData(swap) {
     const abiCoder = new ethers_1.ethers.AbiCoder();
-    if (swap.dexId === "BALANCER" ||
+    if (swap.dexId === "BALANCER_V2" ||
         swap.dexId === "CURVE" ||
         swap.dexId === "UNI_V3") {
         // For DEXes like Balancer, Curve, UniswapV3: encode poolId, tokenIn, and tokenOut
