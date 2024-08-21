@@ -33,12 +33,8 @@ export class RateX {
     };
 
     async getQuote(tokenIn: string, tokenOut: string, amountIn: bigint): Promise<Quote> {
-        const preFetchPools = Date.now();
         const pools: Pool[] = await fetchPoolsData(tokenIn, tokenOut, 5, 5, this.chainId, this.rpcProvider, this.graphApiKey, this.dexes)
-        const middle = Date.now();
         const route = await findRoute(tokenIn, tokenOut, amountIn, pools, this.chainId)
-        const finished = Date.now();
-        console.log(middle - preFetchPools)
         return route
     }
 
