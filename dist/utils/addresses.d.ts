@@ -11,12 +11,6 @@ export declare const addresses: {
     gmxToken: string;
     sushiRouter: string;
     sushiFactory: string;
-    Curve: {
-        curve2Pool: string;
-        curve_wBTC_renBTCPool: string;
-        eurusd: string;
-        wsteth: string;
-    };
     uniQuoter: string;
     uniQuoterV2: string;
     uniRouter: string;

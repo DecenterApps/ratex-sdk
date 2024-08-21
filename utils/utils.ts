@@ -108,7 +108,6 @@ export function encodeSwapData(swap: SwapStep): string {
   const abiCoder = new ethers.AbiCoder();
   if (
     swap.dexId === "BALANCER_V2" ||
-    swap.dexId === "CURVE" ||
     swap.dexId === "UNI_V3"
   ) {
     // For DEXes like Balancer, Curve, UniswapV3: encode poolId, tokenIn, and tokenOut
