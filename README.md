@@ -1,9 +1,7 @@
 # 💡 RateX SDK
 
 <div style='flex: 0.2; align="center"'>
-<img src="./images/decenter_logo.png"
-        alt="decenter"
-        style="max-width: 100%;" />
+<img src="https://raw.githubusercontent.com/DecenterApps/RateX/main/images/decenter_logo.png" alt="Decenter Logo" style="max-width: 100%;" />
 </div>
 
 ## 🌟 Introduction
